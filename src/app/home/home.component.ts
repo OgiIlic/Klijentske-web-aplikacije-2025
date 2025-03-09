@@ -5,6 +5,9 @@ import { AxiosError } from 'axios';
 import { FlightModel } from '../../models/flight.model';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import { UtilsService } from '../../services/utils.service';
+
+
 
 
 @Component({
@@ -16,16 +19,11 @@ import {MatCardModule} from '@angular/material/card';
 export class HomeComponent {
   flights: FlightModel[] | null = null
   error: string | null = null
-  
 
-  constructor() {
+  constructor(public Utils: UtilsService) {
     FlightService.getFlights(0, 3)
       .then(rsp => this.flights = rsp.data.content)
       .catch((e:AxiosError) => this.error = `${e.code}: ${e.message}`)
-  }
-
-  formatDate(iso: string){
-    return new Date(iso).toLocaleString('sr-RS')
   }
 
   public generateDestinationImage(dest: string){
