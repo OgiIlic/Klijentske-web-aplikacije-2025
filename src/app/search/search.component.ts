@@ -5,11 +5,12 @@ import { JsonPipe, NgFor, NgIf } from '@angular/common';
 import { FlightService } from '../../services/main.service';
 import {MatButtonModule} from '@angular/material/button';
 import { UtilsService } from '../../services/utils.service';
+import { LoadingComponent } from "../loading/loading.component";
 
 
 @Component({
   selector: 'app-search',
-  imports: [MatTableModule, NgIf, MatButtonModule],
+  imports: [MatTableModule, NgIf, MatButtonModule, LoadingComponent],
   templateUrl: './search.component.html',
   styleUrl: './search.component.css'
 })

@@ -6,13 +6,14 @@ import { FlightModel } from '../../models/flight.model';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { UtilsService } from '../../services/utils.service';
+import { LoadingComponent } from "../loading/loading.component";
 
 
 
 
 @Component({
   selector: 'app-home',
-  imports: [NgIf, NgFor, MatButtonModule, MatCardModule],
+  imports: [NgIf, NgFor, MatButtonModule, MatCardModule, LoadingComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
